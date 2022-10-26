@@ -25,19 +25,19 @@ void Palindrom(int value)
 {
     while (Length(value) > 1)
     {
-        if (value % 10 == Reverse(value) % 10)
+        if (value % 10 == Reverse(value) % 10 && value >= 0)
         {
             value /= 10;
             value = Reverse(value) / 10;  
             if ((Length(value) == 2 && value / 10 == value % 10) || (Length(value) == 1))
             {
-                Console.WriteLine("Да");
+                Console.WriteLine("Является палиндромом");
                 return;
             }
         }
         else
         {
-            Console.WriteLine("Нет");
+            Console.WriteLine("Не является палиндромом");
             return;
         }
     }
@@ -46,7 +46,7 @@ void Palindrom(int value)
 int a;
 Console.WriteLine("Введите число");
 a = Convert.ToInt32(Console.ReadLine());
-Palindrom(a);
+Palindrom(Math.Abs(a));
 
 
 
